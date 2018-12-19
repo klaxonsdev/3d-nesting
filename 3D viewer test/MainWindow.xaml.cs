@@ -88,12 +88,12 @@ namespace _3D_viewer_test
             return (1.0 / 6.0) * (-v321 + v231 + v312 - v132 - v213 + v123);
         }
 
-        public double VolumeOfMesh(STLDocument model)
-        {
-            var vols = from t in model.Facets[1]
-                       select SignedVolumeOfTriangle(t.P1, t.P2, t.P3);
-            return Math.Abs(vols.Sum());
-        }
+        //public double VolumeOfMesh(STLDocument model)
+        //{
+        //    var vols = from t in model.Facets[1]
+        //               select SignedVolumeOfTriangle(t.P1, t.P2, t.P3);
+        //    return Math.Abs(vols.Sum());
+        //}
 
         public void FromFile()
         {
