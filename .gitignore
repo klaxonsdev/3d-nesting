@@ -1,1 +1,1 @@
-*.o *.lo *.la *.al .libs *.so *.so.[0-9]* *.a *.pyc *.pyo __pycache__ *.rej *~ #*# .#* .*.swp .DS_Store [Tt]humbs.db *.suo *.user *.userosscache *.sln.docstates
+*.o *.lo *.la *.al .libs *.so *.so.[0-9]* *.a *.pyc *.pyo __pycache__ *.rej *~ #*# .#* .*.swp .DS_Store obj bin debug release ignore cvs .cvs .vs .res thumbs.db *.bak *.class *.exe *.dll *.mine *.obj *.ncb *.lib *.log *.idb *.pdb *.ilk *.msi* *.pch *.suo *.exp *.*~ *.~* ~*.*  *.db *.csproj.user *.user *.generated.cs 
