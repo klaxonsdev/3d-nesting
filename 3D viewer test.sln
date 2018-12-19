@@ -5,10 +5,6 @@ VisualStudioVersion = 15.0.27428.2043
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3D viewer test", "3D viewer test\3D viewer test.csproj", "{15A0E0CC-CFA7-4A56-BEE8-EBCE4E4DA610}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "..\..\..\Desktop\STLdotNET-1.3.1\STLdotNET-1.3.1\Source\Test\Test.csproj", "{F8604512-723C-493E-BFD3-ECA49558CA72}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STL", "..\..\..\Desktop\STLdotNET-1.3.1\STLdotNET-1.3.1\Source\STL\STL.csproj", "{F32F3151-1595-4211-A01E-2F7BEB34F88D}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,14 +15,6 @@ Global
 		{15A0E0CC-CFA7-4A56-BEE8-EBCE4E4DA610}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15A0E0CC-CFA7-4A56-BEE8-EBCE4E4DA610}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15A0E0CC-CFA7-4A56-BEE8-EBCE4E4DA610}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F8604512-723C-493E-BFD3-ECA49558CA72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F8604512-723C-493E-BFD3-ECA49558CA72}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F8604512-723C-493E-BFD3-ECA49558CA72}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F8604512-723C-493E-BFD3-ECA49558CA72}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F32F3151-1595-4211-A01E-2F7BEB34F88D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F32F3151-1595-4211-A01E-2F7BEB34F88D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F32F3151-1595-4211-A01E-2F7BEB34F88D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F32F3151-1595-4211-A01E-2F7BEB34F88D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
