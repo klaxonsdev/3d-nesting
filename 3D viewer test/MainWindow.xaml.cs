@@ -59,25 +59,27 @@ namespace _3D_viewer_test
                 box.Clear();
                 STLDocument model = new STLDocument();
                 model = STLDocument.Open(MODEL_PATHs);
-                for (int i = 0; i < model.Facets.Count; i++)
-                {
-                    box.AppendText($"Facet : {i} \n" + model.Facets[i].Normal.X.ToString() +";"+ model.Facets[i].Normal.Y.ToString() + ";" + model.Facets[i].Normal.Z.ToString() + "\n");
-                    for (int j = 0; j < model.Facets[i].Vertices.Count; j++)
-                    {
+                //for (int i = 0; i < model.Facets.Count; i++)
+                //{
+                //    box.AppendText($"Facet : {i} \n" + model.Facets[i].Normal.X.ToString() +";"+ model.Facets[i].Normal.Y.ToString() + ";" + model.Facets[i].Normal.Z.ToString() + "\n");
+                //    for (int j = 0; j < model.Facets[i].Vertices.Count; j++)
+                //    {
                         
-                        box.AppendText(model.Facets[i].Vertices[j].X.ToString() +
-                            ";" + model.Facets[i].Vertices[j].Y.ToString() +
-                            ";" + model.Facets[i].Vertices[j].Z.ToString() +"\n");
+                //        box.AppendText(model.Facets[i].Vertices[j].X.ToString() +
+                //            ";" + model.Facets[i].Vertices[j].Y.ToString() +
+                //            ";" + model.Facets[i].Vertices[j].Z.ToString() +"\n");
 
 
-                    }
+                //    }
                     
-                }
+                //}
+                
+                box.AppendText("Volume: "+ VolumeOfMesh(model).ToString());          
             }
 
         }
 
-        public double SignedVolumeOfTriangle(Vector3D p1, Vector3D p2, Vector3D p3)
+        public float SignedVolumeOfTriangle(Vertex p1, Vertex p2, Vertex p3)
         {
             var v321 = p3.X * p2.Y * p1.Z;
             var v231 = p2.X * p3.Y * p1.Z;
@@ -85,15 +87,19 @@ namespace _3D_viewer_test
             var v132 = p1.X * p3.Y * p2.Z;
             var v213 = p2.X * p1.Y * p3.Z;
             var v123 = p1.X * p2.Y * p3.Z;
-            return (1.0 / 6.0) * (-v321 + v231 + v312 - v132 - v213 + v123);
+            return (1.0f / 6.0f) * (-v321 + v231 + v312 - v132 - v213 + v123);
         }
 
-        //public double VolumeOfMesh(STLDocument model)
-        //{
-        //    var vols = from t in model.Facets[1]
-        //               select SignedVolumeOfTriangle(t.P1, t.P2, t.P3);
-        //    return Math.Abs(vols.Sum());
-        //}
+        public float VolumeOfMesh(STLDocument model)
+        {
+            var vol = 0.0f;
+            foreach (var item in model.Facets)
+            {
+                vol = vol + SignedVolumeOfTriangle(item.Vertices[0], item.Vertices[1], item.Vertices[2]);
+            }
+            return vol;
+        }
+
 
         public void FromFile()
         {
