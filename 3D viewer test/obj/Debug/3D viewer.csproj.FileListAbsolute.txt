@@ -1,0 +1,24 @@
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\3D viewer test.exe.config
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\3D viewer test.exe
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\3D viewer test.pdb
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\HelixToolkit.dll
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\HelixToolkit.Wpf.dll
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\HelixToolkit.pdb
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\HelixToolkit.xml
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\HelixToolkit.Wpf.pdb
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\HelixToolkit.Wpf.xml
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\3D viewer.csprojAssemblyReference.cache
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\MainWindow.baml
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\MainWindow.g.cs
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\Setting.g.cs
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\App.g.cs
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\3D viewer test_MarkupCompile.cache
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\3D viewer test_MarkupCompile.lref
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\Setting.baml
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\3D viewer test.g.resources
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\_3D_viewer_test.Properties.Resources.resources
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\3D viewer.csproj.GenerateResource.cache
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\3D viewer.csproj.CoreCompileInputs.cache
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\3D viewer.csproj.CopyComplete
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\3D viewer test.exe
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\3D viewer test.pdb

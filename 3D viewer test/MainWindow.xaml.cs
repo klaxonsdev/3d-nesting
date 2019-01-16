@@ -11,18 +11,23 @@ using System.Collections.Generic;
 using System.Linq;
 
 
-namespace _3D_viewer_test
+namespace _3D_viewer
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        public List<Model> modelFiles = new List<Model>();
+        public OpenFileDialog openFileDialog = new OpenFileDialog();
+        public ModelVisual3D device3D = new ModelVisual3D();
+        public Calculation Calc = new Calculation();
+        public float PrintVol;
+
+
         public MainWindow()
         {
-
             InitializeComponent();
+            
         }
         public class Model
         {
@@ -55,42 +60,26 @@ namespace _3D_viewer_test
         }
         private void OpenFile_Click (object sender, RoutedEventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Multiselect = true;
             if (openFileDialog.ShowDialog() == true)
             {
                 STLDocument model = new STLDocument();
+                List<Model> modelFiles = new List<Model>();
+                float TotModVol = 0;
                 for (int i = 0; i < openFileDialog.FileNames.Length; i++)
                 {
                     model = STLDocument.Open(openFileDialog.FileNames[i]);
-                    modelFiles.Add(new Model() { Name = openFileDialog.SafeFileNames[i], Vol = VolumeOfMesh(model).ToString() + " Cubic ml" ,ModelPath = openFileDialog.FileNames[i]});
+                    modelFiles.Add(new Model() { Name = openFileDialog.SafeFileNames[i], Vol = Calc.VolumeOfMesh(model).ToString() + " cm³", ModelPath = openFileDialog.FileNames[i]});
+                    TotModVol = TotModVol + Calc.VolumeOfMesh(model);
                 }
                         
-                lvModel.ItemsSource = modelFiles;                       
+                lvModel.ItemsSource = modelFiles;
+                ModelTotText.Text = "Total Model: " + openFileDialog.FileNames.Length.ToString();
+                ModelVolText.Text = "3D Model Volume: " + TotModVol + " cm³";
+                float availvol = PrintVol - TotModVol;
+                AvailVolText.Text = "Available Volume: "+ availvol.ToString()+ " cm³";
             }
         }
-
-        public float SignedVolumeOfTriangle(Vertex p1, Vertex p2, Vertex p3)
-        {
-            var v321 = p3.X * p2.Y * p1.Z;
-            var v231 = p2.X * p3.Y * p1.Z;
-            var v312 = p3.X * p1.Y * p2.Z;
-            var v132 = p1.X * p3.Y * p2.Z;
-            var v213 = p2.X * p1.Y * p3.Z;
-            var v123 = p1.X * p2.Y * p3.Z;
-            return (1.0f / 6.0f) * (-v321 + v231 + v312 - v132 - v213 + v123);
-        }
-
-        public float VolumeOfMesh(STLDocument model)
-        {
-            var vol = 0.0f;
-            foreach (var item in model.Facets)
-            {
-                vol = vol + SignedVolumeOfTriangle(item.Vertices[0], item.Vertices[1], item.Vertices[2]);
-            }
-            return vol;
-        }
-
 
         public void FromFile()
         {
@@ -122,14 +111,23 @@ namespace _3D_viewer_test
 
         private void ListView_SelectionChanged_1(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-  
-            ModelVisual3D device3D = new ModelVisual3D();
-            device3D.Content = Display3d();
+            if (lvModel.SelectedItems.Count == 0)
+            {
+                return;
+            }
+            int index = lvModel.SelectedIndex;
+            Port3d.Children.Remove(device3D);
+            device3D.Content = Display3d(openFileDialog.FileNames[index]);
             Port3d.Children.Add(device3D);
-            box.Clear();
             STLDocument model = new STLDocument();
-            model = STLDocument.Open(file);
+            model = STLDocument.Open(openFileDialog.FileNames[index]);
 
+        }
+
+        private void Settingbtn_Click(object sender, RoutedEventArgs e)
+        {
+            SettingWindow settingWindow = new SettingWindow();
+            settingWindow.ShowDialog();
         }
     }
 

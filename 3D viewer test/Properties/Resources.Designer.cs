@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace _3D_viewer_test.Properties
+namespace _3D_viewer.Properties
 {
 
 
