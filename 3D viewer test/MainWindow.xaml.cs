@@ -7,6 +7,7 @@ using System.IO;
 using Microsoft.Win32;
 using QuantumConcepts.Formats.StereoLithography;
 using System.Reflection;
+using System.Collections.Generic;
 using System.Linq;
 
 
@@ -17,14 +18,19 @@ namespace _3D_viewer_test
     /// </summary>
     public partial class MainWindow : Window
     {
+        public List<Model> modelFiles = new List<Model>();
         public MainWindow()
         {
+
             InitializeComponent();
-            //ModelVisual3D device3D = new ModelVisual3D();
-            //device3D.Content = Display3d(MODEL_PATH);
-            // Add to view port
-            
         }
+        public class Model
+        {
+            public string Name { get; set; }
+            public string Vol { get; set; }
+            public string ModelPath { get; set; }
+        }
+
         private Model3D Display3d(string model)
         {
             Model3D device = null;
@@ -50,33 +56,18 @@ namespace _3D_viewer_test
         private void OpenFile_Click (object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Multiselect = true;
             if (openFileDialog.ShowDialog() == true)
             {
-                string MODEL_PATHs = openFileDialog.FileName;
-                ModelVisual3D device3D = new ModelVisual3D();
-                device3D.Content = Display3d(MODEL_PATHs);
-                Port3d.Children.Add(device3D);
-                box.Clear();
                 STLDocument model = new STLDocument();
-                model = STLDocument.Open(MODEL_PATHs);
-                //for (int i = 0; i < model.Facets.Count; i++)
-                //{
-                //    box.AppendText($"Facet : {i} \n" + model.Facets[i].Normal.X.ToString() +";"+ model.Facets[i].Normal.Y.ToString() + ";" + model.Facets[i].Normal.Z.ToString() + "\n");
-                //    for (int j = 0; j < model.Facets[i].Vertices.Count; j++)
-                //    {
+                for (int i = 0; i < openFileDialog.FileNames.Length; i++)
+                {
+                    model = STLDocument.Open(openFileDialog.FileNames[i]);
+                    modelFiles.Add(new Model() { Name = openFileDialog.SafeFileNames[i], Vol = VolumeOfMesh(model).ToString() + " Cubic ml" ,ModelPath = openFileDialog.FileNames[i]});
+                }
                         
-                //        box.AppendText(model.Facets[i].Vertices[j].X.ToString() +
-                //            ";" + model.Facets[i].Vertices[j].Y.ToString() +
-                //            ";" + model.Facets[i].Vertices[j].Z.ToString() +"\n");
-
-
-                //    }
-                    
-                //}
-                
-                box.AppendText("Volume: "+ VolumeOfMesh(model).ToString());          
+                lvModel.ItemsSource = modelFiles;                       
             }
-
         }
 
         public float SignedVolumeOfTriangle(Vertex p1, Vertex p2, Vertex p3)
@@ -128,7 +119,18 @@ namespace _3D_viewer_test
         {
             return Assembly.GetExecutingAssembly().GetManifestResourceStream("QuantumConcepts.Formats.StereoLithography.Test.Data.{0}".Interpolate(filename));
         }
-       
+
+        private void ListView_SelectionChanged_1(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+  
+            ModelVisual3D device3D = new ModelVisual3D();
+            device3D.Content = Display3d();
+            Port3d.Children.Add(device3D);
+            box.Clear();
+            STLDocument model = new STLDocument();
+            model = STLDocument.Open(file);
+
+        }
     }
 
     
