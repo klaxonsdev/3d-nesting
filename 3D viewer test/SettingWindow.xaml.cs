@@ -41,11 +41,11 @@ namespace _3D_viewer
             {
                 return;
             }
-            double PrintVol
-            float PrintVolF = float.Parse(Calc.PrintVolCalc(Convert.ToDouble(LInput.Text), Convert.ToDouble(WInput.Text), Convert.ToDouble(HInput.Text)).ToString());
-            VolText.Text = "Print Volume : "+ + " cm³";
+            double PrintVolD = Calc.PrintVolCalc(Convert.ToDouble(LInput.Text), Convert.ToDouble(WInput.Text), Convert.ToDouble(HInput.Text));
+            float PrintVolF = float.Parse(PrintVolD.ToString());
+            VolText.Text = "Print Volume : "+ PrintVolF + " cm³";
             ((MainWindow)Application.Current.MainWindow).PrintVolText.Text = VolText.Text;
-            ((MainWindow)Application.Current.MainWindow).PrintVol = VolText;
+            ((MainWindow)Application.Current.MainWindow).PrintVol = PrintVolF;
             this.Hide();
         }
     }
