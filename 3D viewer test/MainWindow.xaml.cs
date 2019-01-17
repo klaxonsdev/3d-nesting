@@ -18,16 +18,17 @@ namespace _3D_viewer
     /// </summary>
     public partial class MainWindow : Window
     {
-        public OpenFileDialog openFileDialog = new OpenFileDialog();
-        public ModelVisual3D device3D = new ModelVisual3D();
-        public Calculation Calc = new Calculation();
-        public float PrintVol;
-
-
+        OpenFileDialog openFileDialog = new OpenFileDialog();
+        ModelVisual3D device3D = new ModelVisual3D();
+        Calculation Calc = new Calculation();
+        public float PrintVol = 0;
+        float TotModVol = 0;
+        float availvol = 0;
+        public string PrintVolStr;
         public MainWindow()
         {
             InitializeComponent();
-            
+            SettingWindow sett = new SettingWindow();
         }
         public class Model
         {
@@ -65,18 +66,16 @@ namespace _3D_viewer
             {
                 STLDocument model = new STLDocument();
                 List<Model> modelFiles = new List<Model>();
-                float TotModVol = 0;
                 for (int i = 0; i < openFileDialog.FileNames.Length; i++)
                 {
                     model = STLDocument.Open(openFileDialog.FileNames[i]);
                     modelFiles.Add(new Model() { Name = openFileDialog.SafeFileNames[i], Vol = Calc.VolumeOfMesh(model).ToString() + " cm³", ModelPath = openFileDialog.FileNames[i]});
                     TotModVol = TotModVol + Calc.VolumeOfMesh(model);
-                }
-                        
+                }                     
                 lvModel.ItemsSource = modelFiles;
                 ModelTotText.Text = "Total Model: " + openFileDialog.FileNames.Length.ToString();
                 ModelVolText.Text = "3D Model Volume: " + TotModVol + " cm³";
-                float availvol = PrintVol - TotModVol;
+                availvol = PrintVol - TotModVol;
                 AvailVolText.Text = "Available Volume: "+ availvol.ToString()+ " cm³";
             }
         }
@@ -128,6 +127,13 @@ namespace _3D_viewer
         {
             SettingWindow settingWindow = new SettingWindow();
             settingWindow.ShowDialog();
+            PrintVolText.Text = PrintVolStr;
+        }
+
+        private void Calcbtn_Click(object sender, RoutedEventArgs e)
+        {
+            availvol = PrintVol - TotModVol;
+            AvailVolText.Text = "Available Volume: " + availvol.ToString() + " cm³";
         }
     }
 

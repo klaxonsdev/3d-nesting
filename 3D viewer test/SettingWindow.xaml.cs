@@ -44,7 +44,7 @@ namespace _3D_viewer
             double PrintVolD = Calc.PrintVolCalc(Convert.ToDouble(LInput.Text), Convert.ToDouble(WInput.Text), Convert.ToDouble(HInput.Text));
             float PrintVolF = float.Parse(PrintVolD.ToString());
             VolText.Text = "Print Volume : "+ PrintVolF + " cm³";
-            ((MainWindow)Application.Current.MainWindow).PrintVolText.Text = VolText.Text;
+            ((MainWindow)Application.Current.MainWindow).PrintVolStr = VolText.Text;
             ((MainWindow)Application.Current.MainWindow).PrintVol = PrintVolF;
             this.Hide();
         }
