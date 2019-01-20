@@ -44,3 +44,6 @@ C:\Users\faiii\OneDrive\Documents\GitHub\3d-nesting\3D viewer test\obj\Debug\Set
 C:\Users\faiii\OneDrive\Documents\GitHub\3d-nesting\3D viewer test\obj\Debug\3D viewer test.g.resources
 C:\Users\faiii\OneDrive\Documents\GitHub\3d-nesting\3D viewer test\obj\Debug\_3D_viewer_test.Properties.Resources.resources
 C:\Users\faiii\OneDrive\Documents\GitHub\3d-nesting\3D viewer test\obj\Debug\3D Nesting.csproj.GenerateResource.Cache
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\geometry3Sharp.dll
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\SimplificationWindow.g.cs
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\SimplificationWindow.baml

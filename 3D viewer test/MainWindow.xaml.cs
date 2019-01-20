@@ -135,6 +135,13 @@ namespace _3D_viewer
             availvol = PrintVol - TotModVol;
             AvailVolText.Text = "Available Volume: " + availvol.ToString() + " cm³";
         }
+
+        private void MeshSimbtn_Click(object sender, RoutedEventArgs e)
+        {
+            SimplificationWindow simplificationWindow = new SimplificationWindow();
+            simplificationWindow.ShowDialog();
+
+        }
     }
 
     
