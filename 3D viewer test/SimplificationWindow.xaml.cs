@@ -36,8 +36,8 @@ namespace _3D_viewer
             {
                 STLDocument model = new STLDocument();
                 model = STLDocument.Open(openFileDialog.FileName);
-                Countbox.Text = model.Facets.Count().ToString();
-                TrianglesumBox.Text = Countbox.Text;
+                Countbox.Text = "Triangle Count: "+ model.Facets.Count().ToString();
+                TrianglesumBox.Text = model.Facets.Count().ToString();
             }
         }
 
