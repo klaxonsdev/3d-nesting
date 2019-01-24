@@ -120,7 +120,9 @@ namespace _3D_viewer
             Port3d.Children.Add(device3D);
             STLDocument model = new STLDocument();
             model = STLDocument.Open(openFileDialog.FileNames[index]);
-
+            Calculation bounding = new Calculation();
+            bounding.VolumeOfMesh(model);
+            BoundingText.Text = "Model Bounding Box : "+ bounding.getBoundingBox()[0].ToString()+"  "+ bounding.getBoundingBox()[1].ToString()+ "  "+ bounding.getBoundingBox()[2].ToString();
         }
 
         private void Settingbtn_Click(object sender, RoutedEventArgs e)

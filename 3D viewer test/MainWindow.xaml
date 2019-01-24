@@ -19,6 +19,7 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
 
         </Grid.RowDefinitions>
@@ -30,7 +31,8 @@
         <TextBlock x:Name="ModelVolText" Text="3D Model Volume: " Grid.Column="1" Grid.Row="4" Margin="0,10,0,0"/>
         <TextBlock x:Name="ModelTotText" Text="Total Model: " Grid.Column="2" Grid.Row="5" Margin="10,10,0,0"/>
         <TextBlock x:Name="AvailVolText" Text="Available Volume: " Grid.Column="1" Grid.Row="5" Margin="0,10,0,0"/>
-        <ListView x:Name="lvModel" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="6" HorizontalAlignment="Left" Height="auto" VerticalAlignment="Top" Width="auto" Margin="0,10,0,0" SelectionChanged="ListView_SelectionChanged_1">
+        <TextBlock x:Name="BoundingText"  Text="Model Bounding Box : " Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="0,10,0,0" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <ListView x:Name="lvModel" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="7" HorizontalAlignment="Left" Height="auto" VerticalAlignment="Top" Width="auto" Margin="0,10,0,0" SelectionChanged="ListView_SelectionChanged_1">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="File Name" Width="130" DisplayMemberBinding="{Binding Name}"/>
@@ -42,7 +44,5 @@
             <!-- Remember to add light to the scene -->
             <helix:DefaultLights/>
         </helix:HelixViewport3D>
-
-
     </Grid>
 </Window>
