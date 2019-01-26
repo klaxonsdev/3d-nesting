@@ -27,11 +27,12 @@
         <Button x:Name="Settingbtn" Content="Setting" Grid.Column="2" HorizontalAlignment="Left" Margin="0,0,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Click="Settingbtn_Click"/>
         <Button x:Name="MeshRedbtn" Content="Mesh Reducer" Grid.Row="2" Grid.Column="1" Margin="0,10,10,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120" Click="MeshSimbtn_Click"/>
         <Button x:Name="Calcbtn" Content="Calculate" Grid.Column="2" Grid.Row="2" Width="120" Margin="0,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Click="Calcbtn_Click"/>
+        <Button x:Name="Nestbtn" Content="Nesting" Grid.Row="6" Grid.Column="2" Margin="0,10,0,0" Width="120" HorizontalAlignment="Left"/>
         <TextBlock x:Name="PrintVolText" Text="Print Volume: " Grid.Column="1" Grid.Row="3" Margin="0,10,0,0"/>
         <TextBlock x:Name="ModelVolText" Text="3D Model Volume: " Grid.Column="1" Grid.Row="4" Margin="0,10,0,0"/>
         <TextBlock x:Name="ModelTotText" Text="Total Model: " Grid.Column="2" Grid.Row="5" Margin="10,10,0,0"/>
         <TextBlock x:Name="AvailVolText" Text="Available Volume: " Grid.Column="1" Grid.Row="5" Margin="0,10,0,0"/>
-        <TextBlock x:Name="BoundingText"  Text="Model Bounding Box : " Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="0,10,0,0" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:Name="BoundingText"  Text="Model Bounding Box : " Grid.Column="1" Grid.ColumnSpan="1" HorizontalAlignment="Left" Margin="0,10,0,0" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <ListView x:Name="lvModel" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="7" HorizontalAlignment="Left" Height="auto" VerticalAlignment="Top" Width="auto" Margin="0,10,0,0" SelectionChanged="ListView_SelectionChanged_1">
             <ListView.View>
                 <GridView>

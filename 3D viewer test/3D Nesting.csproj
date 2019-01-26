@@ -71,7 +71,6 @@
     </ApplicationDefinition>
     <Compile Include="Calculation.cs" />
     <Compile Include="MeshDecimator.cs" />
-    <Compile Include="Nesting.cs" />
     <Compile Include="SettingWindow.xaml.cs">
       <DependentUpon>SettingWindow.xaml</DependentUpon>
     </Compile>
