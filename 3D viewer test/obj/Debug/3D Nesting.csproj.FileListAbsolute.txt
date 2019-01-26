@@ -1,27 +1,3 @@
-C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\MainWindow.baml
-C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\MainWindow.g.cs
-C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\SettingWindow.g.cs
-C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\App.g.cs
-C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\3D viewer test_MarkupCompile.cache
-C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\3D viewer test_MarkupCompile.lref
-C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\3D viewer test.exe.config
-C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\3D viewer test.exe
-C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\3D viewer test.pdb
-C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\HelixToolkit.dll
-C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\HelixToolkit.Wpf.dll
-C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\HelixToolkit.pdb
-C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\HelixToolkit.xml
-C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\HelixToolkit.Wpf.pdb
-C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\HelixToolkit.Wpf.xml
-C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\SettingWindow.baml
-C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\3D viewer test.g.resources
-C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\_3D_viewer_test.Properties.Resources.resources
-C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\3D Nesting.csproj.GenerateResource.cache
-C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\3D Nesting.csproj.CoreCompileInputs.cache
-C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\3D Nesting.csproj.CopyComplete
-C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\3D viewer test.exe
-C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\3D viewer test.pdb
-C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\3D Nesting.csprojAssemblyReference.cache
 C:\Users\faiii\OneDrive\Documents\GitHub\3d-nesting\3D viewer test\bin\Debug\3D viewer test.exe.config
 C:\Users\faiii\OneDrive\Documents\GitHub\3d-nesting\3D viewer test\obj\Debug\3D viewer test.exe
 C:\Users\faiii\OneDrive\Documents\GitHub\3d-nesting\3D viewer test\obj\Debug\3D viewer test.pdb
@@ -44,12 +20,12 @@ C:\Users\faiii\OneDrive\Documents\GitHub\3d-nesting\3D viewer test\obj\Debug\Set
 C:\Users\faiii\OneDrive\Documents\GitHub\3d-nesting\3D viewer test\obj\Debug\3D viewer test.g.resources
 C:\Users\faiii\OneDrive\Documents\GitHub\3d-nesting\3D viewer test\obj\Debug\_3D_viewer_test.Properties.Resources.resources
 C:\Users\faiii\OneDrive\Documents\GitHub\3d-nesting\3D viewer test\obj\Debug\3D Nesting.csproj.GenerateResource.Cache
-C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\geometry3Sharp.dll
-C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\SimplificationWindow.g.cs
-C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\SimplificationWindow.baml
 C:\Users\faiii\OneDrive\Documents\GitHub\3d-nesting\3D viewer test\bin\Debug\geometry3Sharp.dll
 C:\Users\faiii\OneDrive\Documents\GitHub\3d-nesting\3D viewer test\obj\Debug\SimplificationWindow.g.cs
 C:\Users\faiii\OneDrive\Documents\GitHub\3d-nesting\3D viewer test\obj\Debug\SimplificationWindow.baml
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\3D viewer test.exe.config
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\3D viewer test.exe
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\3D viewer test.pdb
 C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\Microsoft.Win32.Primitives.dll
 C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\netstandard.dll
 C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\System.AppContext.dll
@@ -147,5 +123,30 @@ C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\System.Xml.
 C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\System.Xml.XPath.dll
 C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\System.Xml.XPath.XDocument.dll
 C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\CromulentBisgetti.ContainerPacking.dll
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\geometry3Sharp.dll
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\HelixToolkit.dll
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\HelixToolkit.Wpf.dll
 C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\CromulentBisgetti.ContainerPacking.pdb
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\HelixToolkit.pdb
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\HelixToolkit.xml
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\HelixToolkit.Wpf.pdb
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\HelixToolkit.Wpf.xml
 C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\3D viewer test.exe.config
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\MainWindow.baml
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\MainWindow.g.cs
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\SettingWindow.g.cs
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\SimplificationWindow.g.cs
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\App.g.cs
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\3D viewer test_MarkupCompile.cache
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\3D viewer test_MarkupCompile.lref
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\SettingWindow.baml
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\SimplificationWindow.baml
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\3D viewer test.g.resources
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\_3D_viewer_test.Properties.Resources.resources
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\3D Nesting.csproj.GenerateResource.cache
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\3D Nesting.csproj.CoreCompileInputs.cache
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\3D Nesting.csproj.CopyComplete
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\3D viewer test.exe
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\3D viewer test.pdb
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\3D viewer test.exe.CodeAnalysisLog.xml
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\3D viewer test.exe.lastcodeanalysissucceeded

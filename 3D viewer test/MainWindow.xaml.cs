@@ -29,6 +29,7 @@ namespace _3D_viewer
         decimal containerLength = 0;
         decimal containerWidth = 0;
         decimal containerHeight = 0;
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -150,6 +151,21 @@ namespace _3D_viewer
         {
             SimplificationWindow simplificationWindow = new SimplificationWindow();
             simplificationWindow.ShowDialog();
+
+        }
+
+        private void Nestbtn_Click(object sender, RoutedEventArgs e)
+        {
+            Calculation Calc = new Calculation();
+            List<Item> itemToPack = new List<Item>();
+            STLDocument model = new STLDocument();
+            containers.Add(new Container(1, containerLength, containerWidth, containerHeight));
+            for (int i = 0; i < openFileDialog.FileNames.Length; i++)
+            {
+                model = STLDocument.Open(openFileDialog.FileNames[i]);
+                Calc.VolumeOfMesh(model);
+                itemToPack.Add(new Item(i, Convert.ToDecimal(Calc.getBoundingBox()[0]), Convert.ToDecimal(Calc.getBoundingBox()[1]), Convert.ToDecimal(Calc.getBoundingBox()[2]), 1));
+            }
 
         }
     }

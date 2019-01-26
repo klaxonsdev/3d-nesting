@@ -83,6 +83,75 @@
             The radius Y.
             </param>
         </member>
+        <member name="M:HelixToolkit.Wpf.Closest3DPointHitTester.#ctor(System.Windows.Controls.Viewport3D,System.Int32)">
+            <summary>
+            Create a new CloseObjectHitTest that returns a 3D point closest to the clicked point on the camera.
+            </summary>
+            <param name="viewPort3D"></param>
+            <param name="maximumVerticesPerMesh">
+            The maximum number of vertices a mesh may contain to exactly determine the closest vertex for it when there is no exact hit.
+            Any mesh containing more vertices gets approximated by its bounds.
+            Note: Will mostly save on computation time once the bounds are already calculated and cashed within the MeshGeometry3D.
+            </param>
+        </member>
+        <member name="M:HelixToolkit.Wpf.Closest3DPointHitTester.CalculateMouseDownNearestPoint(System.Windows.Point,System.Boolean)">
+            <summary>
+            Returns the 3D point that the user most likely clicked on.
+            Returns the closest intersection with a mesh, if possible.
+            If useClosestMeshIfPossible is true it will otherwise returns the mesh vertex that is closest to the clicked 2D screen coordinate, if possible.
+            Returns the unprojected position otherwise.
+            Also returns the 2D point corresponding to the returned 3D point.
+            </summary>
+            <param name="position"> The point in screen coordinates to calculate the closest vertices for. </param>
+            <param name="useClosestMeshIfPossible"> When true the closest vertex point to the clicked position will be used when no mesh is hit at the exact mouse cursor area.</param>
+        </member>
+        <member name="M:HelixToolkit.Wpf.Closest3DPointHitTester.FindClosestHits(System.Windows.Point)">
+            <summary>
+            For each mesh object in the viewport, this method calculates the vertex that when mapped to 2D is closest to the given 2D point on the screen
+            </summary>
+            <param name="pointToHitTest"> The point in screen coordinates to calculate the closest vertices for. </param>
+            <returns> A ClosestVertexResult containing the distance to the 2D point and the closest 3D vertex point for each geometry/model </returns>
+        </member>
+        <member name="T:HelixToolkit.Wpf.ClosestVertexResult">
+            <summary>
+            The result of a hit test where the point with the smallest 2D distance from a given point is searched.
+            </summary>
+        </member>
+        <member name="P:HelixToolkit.Wpf.ClosestVertexResult.ClosestPoint">
+            <summary>
+            The mesh vertex closest to the searched coordinate.
+            </summary>
+        </member>
+        <member name="P:HelixToolkit.Wpf.ClosestVertexResult.ClosestPointIn2D">
+            <summary>
+            The 2D coordinate matching the found mesh vertex.
+            </summary>
+        </member>
+        <member name="P:HelixToolkit.Wpf.ClosestVertexResult.Geometry">
+            <summary>
+            The mesh geometry the found point belongs to.
+            </summary>
+        </member>
+        <member name="P:HelixToolkit.Wpf.ClosestVertexResult.Model">
+            <summary>
+            The geometry model the point belongs to.
+            </summary>
+        </member>
+        <member name="P:HelixToolkit.Wpf.ClosestVertexResult.DistanceToPoint2D">
+            <summary>
+            The 2D distance from the found point to the point that was searched for.
+            </summary>
+        </member>
+        <member name="P:HelixToolkit.Wpf.NearestPointInCamera.MouseDownNearestPoint3D">
+            <summary>
+            The 3D point that most closely matches the ray from the camera cast at the current mouse position.
+            </summary>
+        </member>
+        <member name="P:HelixToolkit.Wpf.NearestPointInCamera.MouseDownNearestPoint2D">
+            <summary>
+            The 2D coordinate corresponding to said 3D point. This will usually coïncide with the mouse position, but may differ if there is no geometry directly under the mouse postion.
+            </summary>
+        </member>
         <member name="T:HelixToolkit.Wpf.InterlacedView3D">
             <summary>
             An interlaced viewer control.
@@ -3224,6 +3293,11 @@
             Gets or sets the mouse down point at the nearest hit element (3D world coordinates).
             </summary>
         </member>
+        <member name="P:HelixToolkit.Wpf.MouseGestureHandler.MouseDownNearestPoint2D">
+            <summary>
+            Gets or sets the mouse down point (2D screen coordinates).
+            </summary>
+        </member>
         <member name="P:HelixToolkit.Wpf.MouseGestureHandler.MouseDownPoint">
             <summary>
             Gets or sets the mouse down point (2D screen coordinates).
@@ -6359,6 +6433,13 @@
         <member name="P:HelixToolkit.Wpf.CameraController.ZoomSensitivity">
             <summary>
             Gets or sets ZoomSensitivity.
+            </summary>
+        </member>
+        <member name="P:HelixToolkit.Wpf.CameraController.RotataAroundClosestVertexComplexity">
+            <summary>
+            Efficiency option, lower values decrease computation time for camera interaction when
+            RotateAroundMouseDownPoint or ZoomAroundMouseDownPoint is set to true in inspect mode.
+            Note: Will mostly save on computation time once the bounds are already calculated and cashed within the MeshGeometry3D.
             </summary>
         </member>
         <member name="P:HelixToolkit.Wpf.CameraController.IsOrthographicCamera">
@@ -14596,6 +14677,22 @@
             <param name="path">The path.</param>
             <returns>The brush.</returns>
         </member>
+        <member name="T:HelixToolkit.Wpf.ObjReader.PathHelpers">
+            <summary>
+            Path helpers.
+            </summary>
+        </member>
+        <member name="M:HelixToolkit.Wpf.ObjReader.PathHelpers.GetFullPath(System.String,System.String)">
+            <summary>
+            Gets a full path.
+            </summary>
+            <param name="basePath">
+            The base path.
+            </param>
+            <param name="path">
+            The path.
+            </param>
+        </member>
         <member name="T:HelixToolkit.Wpf.LwoReader">
             <summary>
             LWO (Lightwave object) file reader
@@ -16829,6 +16926,14 @@
             <param name="viewport">The viewport.</param>
             <param name="point">The 3D point.</param>
             <returns>The point.</returns>
+        </member>
+        <member name="M:HelixToolkit.Wpf.Viewport3DHelper.Point3DtoPoint2D(System.Windows.Controls.Viewport3D,System.Collections.Generic.IEnumerable{System.Windows.Media.Media3D.Point3D})">
+            <summary>
+            Transforms the set of Point3D to a set of Point2D.
+            </summary>
+            <param name="viewport">The viewport.</param>
+            <param name="points">The set of 3D points.</param>
+            <returns>The transformed points.</returns>
         </member>
         <member name="M:HelixToolkit.Wpf.Viewport3DHelper.Print(System.Windows.Controls.Viewport3D,System.String)">
             <summary>
