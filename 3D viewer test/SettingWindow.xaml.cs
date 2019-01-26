@@ -46,6 +46,9 @@ namespace _3D_viewer
             VolText.Text = "Print Volume : "+ PrintVolF + " cm³";
             ((MainWindow)Application.Current.MainWindow).PrintVolStr = VolText.Text;
             ((MainWindow)Application.Current.MainWindow).PrintVol = PrintVolF;
+            ((MainWindow)Application.Current.MainWindow).containerLength = Convert.ToDecimal(LInput.Text);
+            ((MainWindow)Application.Current.MainWindow).containerWidth = Convert.ToDecimal(WInput.Text);
+            ((MainWindow)Application.Current.MainWindow).containerHeight = Convert.ToDecimal(HInput.Text);
             this.Hide();
         }
     }

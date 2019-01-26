@@ -10,6 +10,8 @@ using System.Reflection;
 using System.Collections.Generic;
 using System.Linq;
 using CromulentBisgetti.ContainerPacking.Entities;
+using CromulentBisgetti.ContainerPacking.Algorithms;
+using CromulentBisgetti.ContainerPacking;
 
 
 namespace _3D_viewer
@@ -22,13 +24,14 @@ namespace _3D_viewer
         OpenFileDialog openFileDialog = new OpenFileDialog();
         ModelVisual3D device3D = new ModelVisual3D();
         List<Container> containers = new List<Container>();
+        List<int> algorithms = new List<int>();
         public float PrintVol = 0;
         float TotModVol = 0;
         float availvol = 0;
         public string PrintVolStr;
-        decimal containerLength = 0;
-        decimal containerWidth = 0;
-        decimal containerHeight = 0;
+        public decimal containerLength = 0;
+        public decimal containerWidth = 0;
+        public decimal containerHeight = 0;
         
         public MainWindow()
         {
@@ -156,17 +159,29 @@ namespace _3D_viewer
 
         private void Nestbtn_Click(object sender, RoutedEventArgs e)
         {
+            if (algorithms.Contains((int)AlgorithmType.EB_AFIT)==false)
+            {
+                algorithms.Add((int)AlgorithmType.EB_AFIT);
+            }
+            if (containers.Contains(new Container(1,containerLength,containerWidth,containerHeight))==false)
+            {
+                containers.Add(new Container(1, containerLength, containerWidth, containerHeight));
+            }
             Calculation Calc = new Calculation();
             List<Item> itemToPack = new List<Item>();
             STLDocument model = new STLDocument();
-            containers.Add(new Container(1, containerLength, containerWidth, containerHeight));
             for (int i = 0; i < openFileDialog.FileNames.Length; i++)
             {
                 model = STLDocument.Open(openFileDialog.FileNames[i]);
                 Calc.VolumeOfMesh(model);
                 itemToPack.Add(new Item(i, Convert.ToDecimal(Calc.getBoundingBox()[0]), Convert.ToDecimal(Calc.getBoundingBox()[1]), Convert.ToDecimal(Calc.getBoundingBox()[2]), 1));
             }
+            List<ContainerPackingResult> containerPackingResults = PackingService.Pack(containers, itemToPack, algorithms);
 
+            foreach (ContainerPackingResult item in containerPackingResults)
+            {
+                containerPackingResults[0].AlgorithmPackingResults[0].PackedItems[1].
+            }
         }
     }
 

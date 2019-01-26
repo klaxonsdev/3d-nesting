@@ -122,7 +122,6 @@ C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\System.Xml.
 C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\System.Xml.XmlSerializer.dll
 C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\System.Xml.XPath.dll
 C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\System.Xml.XPath.XDocument.dll
-C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\CromulentBisgetti.ContainerPacking.dll
 C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\geometry3Sharp.dll
 C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\HelixToolkit.dll
 C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\HelixToolkit.Wpf.dll
@@ -148,5 +147,4 @@ C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\3D Nesting.
 C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\3D Nesting.csproj.CopyComplete
 C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\3D viewer test.exe
 C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\3D viewer test.pdb
-C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\3D viewer test.exe.CodeAnalysisLog.xml
-C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\bin\Debug\3D viewer test.exe.lastcodeanalysissucceeded
+C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\3D viewer test\obj\Debug\3D Nesting.csprojAssemblyReference.cache
