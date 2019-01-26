@@ -9,6 +9,7 @@ using QuantumConcepts.Formats.StereoLithography;
 using System.Reflection;
 using System.Collections.Generic;
 using System.Linq;
+using CromulentBisgetti.ContainerPacking.Entities;
 
 
 namespace _3D_viewer
@@ -20,11 +21,14 @@ namespace _3D_viewer
     {
         OpenFileDialog openFileDialog = new OpenFileDialog();
         ModelVisual3D device3D = new ModelVisual3D();
-        Calculation Calc = new Calculation();
+        List<Container> containers = new List<Container>();
         public float PrintVol = 0;
         float TotModVol = 0;
         float availvol = 0;
         public string PrintVolStr;
+        decimal containerLength = 0;
+        decimal containerWidth = 0;
+        decimal containerHeight = 0;
         public MainWindow()
         {
             InitializeComponent();
@@ -64,13 +68,17 @@ namespace _3D_viewer
             openFileDialog.Multiselect = true;
             if (openFileDialog.ShowDialog() == true)
             {
+                Calculation Calc = new Calculation();
                 STLDocument model = new STLDocument();
                 List<Model> modelFiles = new List<Model>();
+                List<Item> itemToPack = new List<Item>();
+
                 for (int i = 0; i < openFileDialog.FileNames.Length; i++)
                 {
                     model = STLDocument.Open(openFileDialog.FileNames[i]);
                     modelFiles.Add(new Model() { Name = openFileDialog.SafeFileNames[i], Vol = Calc.VolumeOfMesh(model).ToString() + " cm³", ModelPath = openFileDialog.FileNames[i]});
                     TotModVol = TotModVol + Calc.VolumeOfMesh(model);
+                    itemToPack.Add(new Item(i,Convert.ToDecimal(Calc.getBoundingBox()[0]), Convert.ToDecimal(Calc.getBoundingBox()[1]), Convert.ToDecimal(Calc.getBoundingBox()[2]), 1));
                 }                     
                 lvModel.ItemsSource = modelFiles;
                 ModelTotText.Text = "Total Model: " + openFileDialog.FileNames.Length.ToString();
