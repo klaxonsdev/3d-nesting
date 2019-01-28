@@ -41,10 +41,9 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <helix:HelixViewport3D x:Name="Port3d" ZoomExtentsWhenLoaded="true" Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="6" Margin="0,0,-0.333,-0.333">
+        <helix:HelixViewport3D x:Name="Port3d" ZoomExtentsWhenLoaded="true" Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="7" Margin="0,0,-0.333,-0.333">
             <!-- Remember to add light to the scene -->
             <helix:DefaultLights/>
         </helix:HelixViewport3D>
-        <TextBox x:Name="testres" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="61" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="220" Grid.Column="1" Margin="21,93,0,0" Grid.Row="7"/>
     </Grid>
 </Window>

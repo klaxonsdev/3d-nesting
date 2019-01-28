@@ -159,30 +159,54 @@ namespace _3D_viewer
 
         private void Nestbtn_Click(object sender, RoutedEventArgs e)
         {
-            if (algorithms.Contains((int)AlgorithmType.EB_AFIT)==false)
+            if (algorithms.Contains((int)AlgorithmType.EB_AFIT) == false)
             {
                 algorithms.Add((int)AlgorithmType.EB_AFIT);
             }
-            if (containers.Contains(new Container(1,containerLength,containerWidth,containerHeight))==false)
+            if (containers.Contains(new Container(1, containerLength, containerWidth, containerHeight)) == false)
             {
                 containers.Add(new Container(1, containerLength, containerWidth, containerHeight));
             }
             Calculation Calc = new Calculation();
             List<Item> itemToPack = new List<Item>();
             STLDocument model = new STLDocument();
+            List<STLDocument> packedItemList = new List<STLDocument>();
             for (int i = 0; i < openFileDialog.FileNames.Length; i++)
             {
                 model = STLDocument.Open(openFileDialog.FileNames[i]);
+                packedItemList.Add(model);
                 Calc.VolumeOfMesh(model);
                 itemToPack.Add(new Item(i, Convert.ToDecimal(Calc.getBoundingBox()[0]), Convert.ToDecimal(Calc.getBoundingBox()[1]), Convert.ToDecimal(Calc.getBoundingBox()[2]), 1));
             }
             List<ContainerPackingResult> containerPackingResults = PackingService.Pack(containers, itemToPack, algorithms);
+            STLDocument nestedSTL = new STLDocument();
+            for (int i = 0; i < containerPackingResults[0].AlgorithmPackingResults[0].PackedItems.Count; i++)
+            {
+                if (i==0)
+                {
+                    
+                    Vertex shift = new Vertex(float.Parse(containerPackingResults[0].AlgorithmPackingResults[0].PackedItems[i].CoordX.ToString()),
+                                        float.Parse(containerPackingResults[0].AlgorithmPackingResults[0].PackedItems[i].CoordY.ToString()),
+                                        float.Parse(containerPackingResults[0].AlgorithmPackingResults[0].PackedItems[i].CoordZ.ToString()));
+                    packedItemList[0].Facets.Shift(shift);
+                }
+                else
+                {
+                    Vertex shift = new Vertex(float.Parse(containerPackingResults[0].AlgorithmPackingResults[0].PackedItems[i].CoordX.ToString()),
+                                        float.Parse(containerPackingResults[0].AlgorithmPackingResults[0].PackedItems[i].CoordY.ToString()),
+                                        float.Parse(containerPackingResults[0].AlgorithmPackingResults[0].PackedItems[i].CoordZ.ToString()));
+                    packedItemList[i].Facets.Shift(shift);
+                    packedItemList[0].AppendFacets(packedItemList[i]);
+                }
+                packedItemList[0].SaveAsText(@"C:\Users\Klaxonsdept\Desktop\3D Nesting HTW\Model\result.stl");
 
-            testres.Text= containerPackingResults[0].AlgorithmPackingResults[0].PercentContainerVolumePacked.ToString() + " " + 
-                containerPackingResults[0].AlgorithmPackingResults[0].PercentItemVolumePacked.ToString() + " " +
-                containerPackingResults[0].AlgorithmPackingResults[0].PackedItems[1].CoordX.ToString() + " " +
-                containerPackingResults[0].AlgorithmPackingResults[0].PackedItems[1].CoordY.ToString() + " " +
-                containerPackingResults[0].AlgorithmPackingResults[0].PackedItems[1].CoordZ.ToString();
+                //testres.Text = testres.Text + " " +
+                //containerPackingResults[0].AlgorithmPackingResults[0].PackedItems[i].CoordX.ToString() + " " +
+                //containerPackingResults[0].AlgorithmPackingResults[0].PackedItems[i].CoordY.ToString() + " " +
+                //containerPackingResults[0].AlgorithmPackingResults[0].PackedItems[i].CoordZ.ToString() + " " ;
+            }
+            
+            
             
         }
     }
