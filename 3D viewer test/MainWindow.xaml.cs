@@ -178,10 +178,12 @@ namespace _3D_viewer
             }
             List<ContainerPackingResult> containerPackingResults = PackingService.Pack(containers, itemToPack, algorithms);
 
-            foreach (ContainerPackingResult item in containerPackingResults)
-            {
-                containerPackingResults[0].AlgorithmPackingResults[0].PackedItems[1].
-            }
+            testres.Text= containerPackingResults[0].AlgorithmPackingResults[0].PercentContainerVolumePacked.ToString() + " " + 
+                containerPackingResults[0].AlgorithmPackingResults[0].PercentItemVolumePacked.ToString() + " " +
+                containerPackingResults[0].AlgorithmPackingResults[0].PackedItems[1].CoordX.ToString() + " " +
+                containerPackingResults[0].AlgorithmPackingResults[0].PackedItems[1].CoordY.ToString() + " " +
+                containerPackingResults[0].AlgorithmPackingResults[0].PackedItems[1].CoordZ.ToString();
+            
         }
     }
 
