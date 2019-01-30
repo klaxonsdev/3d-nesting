@@ -46,7 +46,7 @@ namespace _3D_viewer
             length = maxx - minx;
             width = maxy - miny;
             height = Math.Abs(maxz - minz);
-            return new float[] {length, width, height};
+            return new float[] {length+1, width+1, height+1};
         }
         public float VolumeOfMesh(STLDocument model)
         {
