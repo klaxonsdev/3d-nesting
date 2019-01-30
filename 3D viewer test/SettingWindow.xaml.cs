@@ -25,6 +25,9 @@ namespace _3D_viewer
         public SettingWindow()
         {
             InitializeComponent();
+            LInput.Text = ((MainWindow)Application.Current.MainWindow).Linput.ToString();
+            WInput.Text = ((MainWindow)Application.Current.MainWindow).Winput.ToString();
+            HInput.Text = ((MainWindow)Application.Current.MainWindow).Hinput.ToString();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -41,6 +44,9 @@ namespace _3D_viewer
             {
                 return;
             }
+            ((MainWindow)Application.Current.MainWindow).Linput = Convert.ToDouble(LInput.Text);
+            ((MainWindow)Application.Current.MainWindow).Winput = Convert.ToDouble(WInput.Text);
+            ((MainWindow)Application.Current.MainWindow).Hinput = Convert.ToDouble(HInput.Text);
             double PrintVolD = Calc.PrintVolCalc(Convert.ToDouble(LInput.Text), Convert.ToDouble(WInput.Text), Convert.ToDouble(HInput.Text));
             float PrintVolF = float.Parse(PrintVolD.ToString());
             VolText.Text = "Print Volume : "+ PrintVolF + " cm³";
@@ -49,6 +55,7 @@ namespace _3D_viewer
             ((MainWindow)Application.Current.MainWindow).containerLength = Convert.ToDecimal(LInput.Text);
             ((MainWindow)Application.Current.MainWindow).containerWidth = Convert.ToDecimal(WInput.Text);
             ((MainWindow)Application.Current.MainWindow).containerHeight = Convert.ToDecimal(HInput.Text);
+            
             this.Hide();
         }
     }

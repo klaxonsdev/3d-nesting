@@ -25,6 +25,9 @@ namespace _3D_viewer
         ModelVisual3D device3D = new ModelVisual3D();
         List<Container> containers = new List<Container>();
         List<int> algorithms = new List<int>();
+        public double Linput = 20;
+        public double Winput = 20;
+        public double Hinput = 20;
         public float PrintVol = 0;
         float TotModVol = 0;
         float availvol = 0;
@@ -32,11 +35,13 @@ namespace _3D_viewer
         public decimal containerLength = 0;
         public decimal containerWidth = 0;
         public decimal containerHeight = 0;
-        
+
+
         public MainWindow()
         {
             InitializeComponent();
             SettingWindow sett = new SettingWindow();
+            PrintVol = float.Parse((Linput * Winput * Hinput).ToString());
         }
         public class Model
         {
