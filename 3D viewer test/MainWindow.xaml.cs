@@ -25,9 +25,9 @@ namespace _3D_viewer
         ModelVisual3D device3D = new ModelVisual3D();
         List<Container> containers = new List<Container>();
         List<int> algorithms = new List<int>();
-        public double Linput = 20;
-        public double Winput = 20;
-        public double Hinput = 20;
+        public double Linput = 30;
+        public double Winput = 30;
+        public double Hinput = 30;
         public float PrintVol = 0;
         float TotModVol = 0;
         float availvol = 0;
@@ -74,6 +74,7 @@ namespace _3D_viewer
         }
         private void OpenFile_Click (object sender, RoutedEventArgs e)
         {
+            //TotModVol = 0;
             openFileDialog.Multiselect = true;
             if (openFileDialog.ShowDialog() == true)
             {
